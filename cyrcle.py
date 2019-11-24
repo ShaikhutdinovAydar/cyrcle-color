@@ -1,5 +1,6 @@
 import sys
 import random
+from main import Ui_MainWindow
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
 
@@ -8,10 +9,9 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         self.c = 0
-        self.setGeometry(0, 0, 600, 600)
-        self.setWindowTitle('Git и желтые окружности')
-        self.btn = QPushButton('Создать', self)
-        self.btn.clicked.connect(self.up)
+        ui = Ui_MainWindow()
+        ui.setupUi(self)
+        ui.pushButton.clicked.connect(self.up)
 
     def up(self):
         self.c = 1
